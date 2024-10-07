@@ -1,0 +1,183 @@
+html,
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+  font-family: "Poppins";
+  background-color: hsl(0, 0%, 94%);
+}
+
+.main {
+  width: 40rem;
+  padding: 24px 56px 56px;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 16px;
+  border-bottom-right-radius: 160px;
+}
+
+.main__button {
+  position: absolute;
+  top: -48px;
+  right: 0;
+  width: 96px;
+  height: 96px;
+  padding: 0;
+  background: url("../images/icon-arrow.svg") no-repeat center
+    hsl(259, 100%, 65%);
+  border: none;
+  cursor: pointer;
+  border-radius: 48px;
+}
+
+.main__button:hover {
+  background-color: black;
+}
+
+.main__divider {
+  position: relative;
+  width: 100%;
+  height: 0.0625rem;
+  margin-top: 48px;
+  background-color: hsl(0, 0%, 86%);
+}
+
+.form__label {
+  font-weight: bold;
+  font-size: 11.2px;
+  letter-spacing: 3.2px;
+  color: hsl(0, 1%, 44%);
+}
+
+.form__input {
+  width: 7rem;
+  height: 3rem;
+  margin-top: 6.4px;
+  padding-left: 1rem;
+  font-family: "Poppins";
+  font-weight: bold;
+  font-size: 1.5rem;
+  caret-color: hsl(259, 100%, 65%);
+  border: 0.0625rem solid lightgray;
+  border-radius: 6.4px;
+  outline: none;
+}
+
+.form__input:focus {
+  border-color: hsl(259, 100%, 65%);
+}
+
+.form__input::placeholder {
+  color: hsl(0, 0%, 58%);
+}
+
+.form__list {
+  display: flex;
+  gap: 24px;
+  padding: 0;
+  list-style-type: none;
+}
+
+.age {
+  margin-top: 2rem;
+}
+
+.age__years-title,
+.age__months-title,
+.age__days-title {
+  margin: 0;
+  font-size: 80px;
+  height: 96px;
+  font-family: "Poppins";
+  font-style: italic;
+}
+
+.age__calc-years,
+.age__calc-months,
+.age__calc-days {
+  color: hsl(259, 100%, 65%);
+}
+
+@media screen and (max-width: 768px) {
+  .main {
+    width: auto;
+    padding: 1.5rem 2rem 3rem;
+  }
+
+  .form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .form__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+  }
+
+  .form__input {
+    width: 5rem;
+  }
+
+  .main__divider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .main__button {
+    position: relative;
+    top: 0;
+    width: 4rem;
+    height: 4rem;
+    background-size: 2rem;
+  }
+
+  .age {
+    margin-top: 4rem;
+  }
+
+  .age__years-title,
+  .age__months-title,
+  .age__days-title {
+    height: auto;
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .main {
+    padding: 1.5rem 1.5rem 3rem;
+  }
+
+  .form__input {
+    width: 4rem;
+    padding-left: .8rem;
+    font-size: 1.2rem
+  }
+
+  .age__years-title,
+  .age__months-title,
+  .age__days-title {
+    width: fit-content;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .main {
+    padding: 1.5rem 1rem 3rem;
+  }
+
+  .form__input {
+    width: 3.5rem;
+    font-size: 1rem;
+  }
+
+  .form__label {
+    font-size: .5rem;
+  }
+}
