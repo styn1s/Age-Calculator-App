@@ -43,11 +43,23 @@ body {
   background-color: hsl(0, 0%, 86%);
 }
 
+.form__list {
+  width: fit-content;
+  display: flex;
+  gap: 24px;
+  padding: 0;
+  list-style-type: none;
+}
+
 .form__label {
   font-weight: bold;
   font-size: 11.2px;
   letter-spacing: 3.2px;
   color: hsl(0, 1%, 44%);
+}
+
+.form__label--error {
+  color: hsl(0, 100%, 67%);
 }
 
 .form__input {
@@ -64,6 +76,10 @@ body {
   outline: none;
 }
 
+.form__input--error {
+  border-color: hsl(0, 100%, 67%);
+}
+
 .form__input:focus {
   border-color: hsl(259, 100%, 65%);
 }
@@ -72,11 +88,11 @@ body {
   color: hsl(0, 0%, 58%);
 }
 
-.form__list {
-  display: flex;
-  gap: 24px;
-  padding: 0;
-  list-style-type: none;
+.input__error-text {
+  margin: .5rem 0 0;
+  font-size: .7rem;
+  font-style: italic;
+  color: hsl(0, 100%, 67%);
 }
 
 .age {
@@ -91,11 +107,13 @@ body {
   height: 96px;
   font-family: "Poppins";
   font-style: italic;
+  font-weight: 800;
 }
 
 .age__calc-years,
 .age__calc-months,
 .age__calc-days {
+  padding-right: .7rem;
   color: hsl(259, 100%, 65%);
 }
 
