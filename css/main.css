@@ -67,6 +67,7 @@ body {
   height: 3rem;
   margin-top: 6.4px;
   padding-left: 1rem;
+  padding-right: 1rem;
   font-family: "Poppins";
   font-weight: bold;
   font-size: 1.5rem;
@@ -74,6 +75,12 @@ body {
   border: 0.0625rem solid lightgray;
   border-radius: 6.4px;
   outline: none;
+}
+
+.form__input::-webkit-inner-spin-button,
+.form__input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .form__input--error {
@@ -142,6 +149,9 @@ body {
   .form__input {
     width: 5rem;
   }
+  .input__error-text {
+    width: 6rem;
+  }
   .main__divider {
     display: flex;
     justify-content: center;
@@ -160,24 +170,31 @@ body {
   .age__years-title,
   .age__months-title,
   .age__days-title {
-    height: auto;
-    font-size: 3rem;
+    height: 5rem;
+    font-size: 4rem;
   }
 }
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 470px) {
   .main {
-    padding: 1.5rem 1.5rem 3rem;
+    padding: 1.5rem 2rem 3rem;
   }
   .form__input {
-    width: 4rem;
-    padding-left: 0.8rem;
+    width: 3.3rem;
     font-size: 1.2rem;
+  }
+  .input__error-text {
+    width: 4rem;
+  }
+  .form__list {
+    gap: 0.7rem;
   }
   .age__years-title,
   .age__months-title,
   .age__days-title {
     width: -moz-fit-content;
     width: fit-content;
+    height: 4rem;
+    font-size: 3.3rem;
   }
 }
 @media screen and (max-width: 340px) {

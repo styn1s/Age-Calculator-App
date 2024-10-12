@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let currentYear = new Date().getFullYear();
     let lastdDayMonth = new Date(year, month, 0).getDate();
 
-    if (day > lastdDayMonth) {
+    if (day > lastdDayMonth || day <= 0) {
       document.getElementById("day-error").innerHTML = 
         "Must be a valid day";
         isValidDate = false;
@@ -65,6 +65,10 @@ document.addEventListener("DOMContentLoaded", function () {
     if (year > currentYear) {
       document.getElementById("year-error").innerHTML = 
         "Must be in the past";
+        isValidDate = false;
+    } else if (year < 100) {
+      document.getElementById("year-error").innerHTML =
+        "Must be a valid year";
         isValidDate = false;
     }
 
