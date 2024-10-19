@@ -56,72 +56,57 @@ document.addEventListener("DOMContentLoaded", function () {
     let currentYear = new Date().getFullYear();
     let lastdDayMonth = new Date(year, month, 0).getDate();
 
-    if (day > lastdDayMonth || day <= 0) {
-      document.getElementById("day-error").innerHTML = 
-        "Must be a valid day";
-        isValidDate = false;
+    const setError = (id, message) => {
+      document.getElementById(id).innerHTML = message;
+      isValidDate = false;
+    };
+
+    if (!day || day > lastdDayMonth || day <= 0) {
+      setError(
+        "day-error",
+        day ? "Must be a valid day" : "This field is required"
+      );
+    }
+
+    if (!month || month < 1 || month > 12) {
+      setError(
+        "month-error",
+        month ? "Must be a valid month" : "This field is required"
+      );
     }
 
     if (year > currentYear) {
-      document.getElementById("year-error").innerHTML = 
-        "Must be in the past";
-        isValidDate = false;
+      setError("year-error", "Must be in the past");
     } else if (year < 100) {
-      document.getElementById("year-error").innerHTML =
-        "Must be a valid year";
-        isValidDate = false;
-    }
-
-    if (month < 1 || month > 12) {
-      document.getElementById("month-error").innerHTML =
-        "Must be a valid month";
-        isValidDate = false;
-    }
-
-    if (year === "") {
-      document.getElementById("year-error").innerHTML =
-        "This field is required";
-      isValidDate = false;
-    }
-
-    if (month === "") {
-      document.getElementById("month-error").innerHTML =
-        "This field is required";
-        isValidDate = false;
-    }
-
-    if (day === "") {
-      document.getElementById("day-error").innerHTML =
-        "This field is required";
-      isValidDate = false;
+      setError("year-error", "Must be a valid year");
+    } else if (!year) {
+      setError("year-error", "This field is required");
     }
 
     return isValidDate;
   }
 
-  function showError() {
+  function toggleError(isError) {
     let inputs = document.querySelectorAll(".form__input");
     let labels = document.querySelectorAll(".form__label");
+
     inputs.forEach((input) => {
-      input.classList.add("form__input--error");
+      input.classList.toggle("form__input--error", isError);
     });
+
     labels.forEach((label) => {
-      label.classList.add("form__label--error");
+      label.classList.toggle("form__label--error", isError);
     });
   }
 
-  function resetError() {
-    let inputs = document.querySelectorAll(".form__input");
-    let labels = document.querySelectorAll(".form__label");
-    let errorTexts = document.querySelectorAll(".input__error-text");
+  function showError() {
+    toggleError(true);
+  }
 
-    inputs.forEach((input) => {
-      input.classList.remove("form__input--error");
-    });
-    labels.forEach((label) => {
-      label.classList.remove("form__label--error");
-    });
-    errorTexts.forEach((text) => {
+  function resetError() {
+    toggleError(false);
+
+    document.querySelectorAll(".input__error-text").forEach((text) => {
       text.innerHTML = "";
     });
   }
