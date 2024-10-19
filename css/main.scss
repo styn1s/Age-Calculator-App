@@ -1,6 +1,6 @@
 :root {
   --primary-font: "Poppins", "Segoe UI", sans-serif;
-  --body-bg-color: hsl(0, 0%, 94%);
+  --body-bg-color: hsl(0, 4%, 89%);
   --main-bg-color: hsl(0, 0%, 100%);
   --label-color: hsl(0, 1%, 44%);
   --error-color: hsl(0, 100%, 67%);
@@ -9,6 +9,8 @@
   --button-hover-color: hsl(0, 0%, 0%);
   --placeholder-color: hsl(0, 0%, 58%);
   --lightgray-color: hsl(0, 0%, 83%);
+
+  /*hsl(0, 0%, 94%)*/
 }
 
 html,
@@ -63,6 +65,10 @@ body {
   font-weight: bold;
   letter-spacing: .2rem;
   color: var(--label-color);
+}
+
+.form__label--error {
+  color: var(--error-color);
 }
 
 .form__input {
@@ -217,9 +223,9 @@ body {
   }
 }
 
-@media screen and (max-width: 340px) {
+@media screen and (max-width: 355px) {
   .main {
-    padding: 1.5rem 1rem 3rem;
+    padding: 1.5rem 1.5rem 3rem;
   }
 
   .form__label {
@@ -227,7 +233,13 @@ body {
   }
 
   .form__input {
-    width: 3.5rem;
+    width: 2.7rem;
     font-size: 1rem;
+  }
+
+  .age__years-title,
+  .age__months-title,
+  .age__days-title {
+    font-size: 3rem;
   }
 }

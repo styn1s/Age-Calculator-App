@@ -75,12 +75,12 @@ document.addEventListener("DOMContentLoaded", function () {
       );
     }
 
-    if (year > currentYear) {
-      setError("year-error", "Must be in the past");
+    if (!year) {
+      setError("year-error", "This field is required");
     } else if (year < 100) {
       setError("year-error", "Must be a valid year");
-    } else if (!year) {
-      setError("year-error", "This field is required");
+    } else if (year > currentYear) {
+      setError("year-error", "Must be in the past");
     }
 
     return isValidDate;
