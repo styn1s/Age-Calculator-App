@@ -23,12 +23,13 @@
   </head>
   <body>
     <main class="main">
-      <section class="form">
+      <section class="form" aria-label="Age calculator section">
         <form
           class="form__body"
           id="ageForm"
-          action=""
+          action="#"
           aria-labelledby="ageForm"
+          onsubmit="return onFormSubmit(event)"
         >
           <ul class="form__list">
             <li class="form__item">
